@@ -1,0 +1,73 @@
+What happens when you initialize a repository? Why do you need to do it?
+
+git init:
+    - create a .git directory under the current folder.
+        ole@skylake:~/Documents/learn_github/version_control/reflections$ ls -a
+        .  ..  lesson_1_reflections.txt
+        ole@skylake:~/Documents/learn_github/version_control/reflections$ git
+        init
+        Initialized empty Git repository in
+        /home/ole/Documents/learn_github/version_control/reflections/.git/
+        ole@skylake:~/Documents/learn_github/version_control/reflections$ ls -a
+        .  ..  .git  lesson_1_reflections.txt
+
+    - does not create any commit.
+    - if directory is empty, git will give warning.
+
+git log:
+    - check log to see commit and changes
+        ole@skylake:~/Documents/learn_github/version_control/reflections$ git
+        log
+        fatal: your current branch 'master' does not have any commits yet
+
+git status:
+    - check current status of files in repository
+        ole@skylake:~/Documents/learn_github/version_control/reflections$ git
+        status
+        On branch master
+
+        Initial commit
+
+        Untracked files:
+          (use "git add <file>..." to include in what will be committed)
+
+                  lesson_1_reflections.txt
+
+                  nothing added to commit but untracked files present (use "git
+                  add" to track)
+
+
+How is the staging area different from the working directory and the
+repository?
+What value do you think it offers?
+
+
+The staging area is where you can control what files you want bundled together
+before you make a commit. The working directory can contain a variety of files
+that doesn't necssary go together. Like different types of recepies, you might
+want to group baking recepies together and make that as one commit.
+
+This offers you a way to organize files and commit them to make changes as
+neccessary.
+
+git add:
+    - add files to staing area.
+
+    git add lesson_1_reflections.txt
+    git status
+        On branch master
+
+        Initial commit
+
+        Changes to be committed:
+          (use "git rm --cached <file>..." to unstage)
+
+                  new file:   lesson_1_reflections.txt
+        
+        Untracked files:
+          (use "git add <file>..." to include in what will be committed)
+
+                  lesson_2_reflections.txt
+
+git reset:
+    -remove file from staging area.
